@@ -21,6 +21,16 @@
 
 }
 
+body.light-theme{
+    --text-color: #090c13;
+    --subheading-color: #7b8cae;
+    --placeholder-color: #606982;
+    --primary-color: #f0f0f0;
+    --secondary-color: #fff;
+    --secondary-color-hover: #e0e0e0;
+    --scrollbar-color: #c1c1c1;
+}
+
 body {
     color: var(--text-color);
     background: var(--primary-color);
@@ -28,6 +38,9 @@ body {
 
 .container {
     padding: 32px 0 60px;
+    overflow-y: auto;
+    max-height: calc(100vh - 127px);
+    scrollbar-color: var(--scrollbar-color) transparent;
 }
 
 .container :where(.app-header, .Suggestions, .message, .prompt-wrapper, .disclaimer-text){
@@ -120,12 +133,16 @@ body {
     color: #6f42c1;
 }
 
+.Suggestions {
+    margin-bottom: 24px;
+}
+
 /* 
 Hidden card and header display */
 
-.container :is(.app-header, .Suggestions) {
+/* .container :is(.app-header, .Suggestions) {
     display: none;
-}
+} */
 
 /* Chat cards and divs */
 
@@ -248,13 +265,43 @@ Hidden card and header display */
     background-color: var(--secondary-color-hover);
 }
 
-.prompt-form .prompt-actions button {
+.prompt-wrapper .prompt-form :where(.file-upload-wrapper, button, img) {
+    position: relative;
     height: 45px;
     width: 45px;
 }
 
 .prompt-form #send-prompt-btn:hover {
     background: #0264e3;
+}
+
+
+.prompt-form .file-upload-wrapper :where(button, img){
+    position:   absolute;
+    border-radius: 50%;
+    object-fit: cover;
+    display: none;
+}
+
+.prompt-form .file-upload-wrapper.active img, .prompt-form .file-upload-wrapper.active:hover #cancel-file-btn {
+    display: block;
+}
+
+.prompt-form .file-upload-wrapper.actise #add-file-btn {
+    display: none;
+}
+
+/* Show the add-file button by default (override the generic hide rule).
+   This assumes the button has id="add-file-btn" in the HTML. */
+.prompt-form .file-upload-wrapper #add-file-btn {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.prompt-form #cancel-file-btn {
+    color: red;
 }
 
 .prompt-form .prompt-actions {
