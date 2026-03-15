@@ -17,7 +17,7 @@
         </header>
 
         <!-- Suggestions... -->
-         <ul class="Suggestions">
+        <ul class="Suggestions">
 
             <li class="suggestions-item">
                 <p class="text">Design a home office set up for a remote work under $500.</p>
@@ -26,22 +26,54 @@
 
             <li class="suggestions-item">
                 <p class="text">How can i level up my web development expertise in 2026?</p>
-                <span class="material-symbols-outlined">draw</span>
+                <span class="material-symbols-outlined">lightbulb</span>
             </li>
 
             <li class="suggestions-item">
                 <p class="text">Suggest some useful tools for debugging Javascript</p>
-                <span class="material-symbols-outlined">draw</span>
+                <span class="material-symbols-outlined">explore</span>
             </li>
 
             <li class="suggestions-item">
                 <p class="text">Create a react JS Component for the simple todo list.</p>
-                <span class="material-symbols-outlined">draw</span>
+                <span class="material-symbols-outlined">code_blocks</span>
             </li>
 
-         </ul>
+        </ul>
+
+
+        <!-- Chats Container -->
+         <div class="chat-container">
+         </div>
+
+
+
+        <!-- Prompt Container -->
+        <div class="prompt-container">
+            
+            <div class="prompt-wrapper">
+                <form action="#" class="prompt-form">
+
+                    <input type="text" class="prompt-input" placeholder="Ask Gemini" required>
+                    <div class="prompt-actions">
+                        <button id="add-file-btn" type="button" class="material-symbols-outlined">attach_file</button>
+                        <button id="send-prompt-btn" class="material-symbols-outlined">arrow_upward</button>
+                    </div>
+                </form>
+
+
+                <button id="themeToggle" class="material-symbols-outlined">light_mode</button>
+                <button id="delete-chats-btn" class="material-symbols-outlined">delete</button>
+
+            </div>
+
+             <p class="disclaimer-text">
+                    Gemini can make a mistake, so please double check for errors.
+            </p>
+        </div>
 
     </div>
+
 
 
 
